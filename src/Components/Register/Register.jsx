@@ -47,7 +47,7 @@ const Register = () => {
         } else if (!/[!@#$%^&*]/.test(password))
             setUserError('you should a special character')
 
-        createRegister(email, password)
+        createRegister(email, password) 
             .then(result => {
 
                 updateUserDetails(result.user, name, photo, selectedFile)
