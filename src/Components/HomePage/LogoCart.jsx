@@ -18,4 +18,4 @@ const LogoCart = () => {
     );
 };
 
-export default LogoCart;
+export default LogoCart;  

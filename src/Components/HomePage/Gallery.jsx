@@ -36,7 +36,7 @@ const Gallery = () => {
                 </div>
             </section>
         </div>
-    );
+    ); 
 };  
 
 export default Gallery;
