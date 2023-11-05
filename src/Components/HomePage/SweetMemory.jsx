@@ -20,7 +20,7 @@ const SweetMemory = () => {
                     <p className='text-5xl'>We Let Your Sweet Memory <br /> Ever Unforgottable </p>
 
 
-                    <div className='flex  justify-between'>
+                    <div className='flex  justify-between'>  
                         <div className='my-10'>
                             <div className='my-10'>
                                 <img src={img2} alt="" />
