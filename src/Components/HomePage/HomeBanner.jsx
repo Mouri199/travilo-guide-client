@@ -42,7 +42,7 @@ const HomeBanner = () => {
                                             <h3 className="text-lg sm:text-5xl font-semibold text-white group-hover:text-white/[.8]">
                                                 Lets Leave The Road,
                                                 And Take The Trails
-                                            </h3>
+                                            </h3> 
 
 
                                         </div>
@@ -153,4 +153,4 @@ const HomeBanner = () => {
     );
 };
 
-export default HomeBanner;
+export default HomeBanner; 
