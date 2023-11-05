@@ -41,7 +41,7 @@ const TravelersSay = () => {
                     <div className="keen-slider__slide number-slide3"><img src={img6} alt="" /></div>
                 </div>
 
-            </div>
+            </div> 
             {loaded && instanceRef.current && (
                 <div className="dots">
                     {[
