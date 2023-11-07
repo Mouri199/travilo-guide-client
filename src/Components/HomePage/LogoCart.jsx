@@ -7,7 +7,7 @@ import img5 from '../../assets/images/partner-5-white.png'
 const LogoCart = () => {
     return (
         <div className=''>
-            <div className='bg-gray-700 lg:flex py-16 space-x-10 justify-center'>
+            <div className='bg-gray-700 grid lg:grid-cols-5 md:grid-cols-3 py-16 space-x-10 justify-center'>
                 <img src={img} alt="" />
                 <img src={img2} alt="" />
                 <img src={img3} alt="" />

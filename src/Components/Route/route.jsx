@@ -2,10 +2,16 @@ import {
     createBrowserRouter
 } from "react-router-dom";
 import MainBody from "../MainBody/MainBody";
-import Home from "../HomePage/Home";
-import Orders from "../Orders/Orders";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import Dashboard from "../Navbar/Dashboard";
+import Home from "../HomePage/Home";
+import ServiceDetails from "../HomePage/ServiceDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Details from "../HomePage/Details";
+import AddServices from "../Add/AddServices";
+import Services from "../Services/Services";
+import MyBooking from "../Navbar/MyBooking";
 
 const router = createBrowserRouter([
     {
@@ -14,19 +20,44 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:8000/allservices')
             },
             {
-                path: '/orders',
-                element: <Orders></Orders>
+                path: '/serviceDetails/:id',
+                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:8000/allservices/${params.id}`)
             },
             {
-                path:'/login',
+                path: '/addservices',
+                element: <AddServices></AddServices>
+            },
+            {
+                path: '/services',
+                element: <Services></Services>,
+                loader: () => fetch('http://localhost:8000/allservices')
+            },
+            {
+                path: '/mybooking',
+                element:<MyBooking></MyBooking>,
+                loader: () => fetch('http://localhost:8000/mybooking')
+            },
+
+            {
+                path: '/login',
                 element: <Login></Login>
             },
             {
-                path:'/register',
-                element:<Register></Register>
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: '/details/:id',
+                element: <Details></Details>,
+                loader: ({ params }) => fetch(`http://localhost:8000/Details/${params.id}`)
+            },
+            {
+                
             }
         ]
     },

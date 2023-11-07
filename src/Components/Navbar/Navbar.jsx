@@ -54,13 +54,13 @@ const Navbar = () => {
     return (
         <>
 
-            <div className="lg:hidden">
+            <div className="lg:hidden bg-white">
                 <div className="flex">
                     <div className="dropdown flex items-center ">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost dark:text-white lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-56 z-[1] p-2 shadow bg-[#a5c7b5]  text-center text-lg text-white rounded-box w-32">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-56 z-[1] p-2 shadow bg-chocolate  text-center text-lg text-white rounded-box w-32">
                             <NavLink to="/">Home</NavLink>
                             <NavLink to='/orders'>Orders</NavLink>
                             <NavLink to='/beautytips'>Beauty Tips</NavLink>
@@ -79,7 +79,7 @@ const Navbar = () => {
                             <div className="">
                                 {user ? <img className="h-[26px] rounded-full" src={user.photoURL} alt="" /> : " "}
 
-                                <p className="text-sm text-[#3b644c] font-semibold lg:font-bold">
+                                <p className="text-sm text-black dark:text-white font-semibold lg:font-bold">
                                     {
                                         user && <span>{user.displayName}</span>
                                     }
@@ -134,28 +134,34 @@ const Navbar = () => {
                             <li>
                                 <Link to='/'>Home</Link>
                             </li>
-                            <li
-                                onMouseEnter={() => setTourDropdownOpen(true)}
-                                onMouseLeave={() => setTourDropdownOpen(false)}
-                            >
-                                <div>
-                                    <span onClick={toggleTourDropdown} className="flex items-center">Dashboard <AiOutlineCaretDown></AiOutlineCaretDown> </span>
-                                    {isTourDropdownOpen && (
-                                        <ul className="absolute top-[90px] bg-[#992833] text-center text-lg text-white rounded-lg w-[150px]">
-                                            <li>
-                                                <Link to='/tour1'>My Services</Link>
-                                            </li>
-                                            <li>
-                                                <Link to='/tour2'>Add Services</Link>
-                                            </li>
-                                            <li>
-                                                <Link to='/tour2'>My schedules</Link>
-                                            </li>
+                            {user &&
+                                (
+                                    <li
+                                        onMouseEnter={() => setTourDropdownOpen(true)}
+                                        onMouseLeave={() => setTourDropdownOpen(false)}
+                                    >
+                                        <div>
+                                            <Link to='/dashboard'>  <span onClick={toggleTourDropdown} className="flex items-center">Dashboard <AiOutlineCaretDown></AiOutlineCaretDown> </span></Link>
+                                            {isTourDropdownOpen && (
+                                                <ul className="absolute top-[90px] bg-[#992833] text-center text-lg text-white rounded-lg w-[150px]">
+                                                    <li>
+                                                        <Link to='/tour1'>My Services</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to='/addservices'>Add Services</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to='/myschedules'>My Schedules</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to='/mybooking'>My Booking</Link>
+                                                    </li>
 
-                                        </ul>
-                                    )}
-                                </div>
-                            </li>
+                                                </ul>
+                                            )}
+                                        </div>
+                                    </li>
+                                )}
 
 
                             <li>

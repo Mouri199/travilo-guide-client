@@ -21,7 +21,7 @@ const SweetMemory = () => {
 
 
                     <div className='flex  justify-between'>  
-                        <div className='my-10'>
+                        <div className='my-10 ml-5'>
                             <div className='my-10'>
                                 <img src={img2} alt="" />
                                 <p className='lg:text-3xl'>Expert Travel Agent</p>
@@ -37,7 +37,7 @@ const SweetMemory = () => {
                             <div className='my-10'>
                                 <img src={img4} alt="" />
                                 <p className='lg:text-3xl'>Easy Booking Options</p>
-                                <p>With our user-friendly booking platform, <br /> planning your dream vacation becomes a <br /> breeze.</p>
+                                <p>With our user-friendly booking platform,<br /> planning your dream vacation becomes a <br /> breeze.</p>
                             </div>
                             <div>
                                 <img src={img5} alt="" />
