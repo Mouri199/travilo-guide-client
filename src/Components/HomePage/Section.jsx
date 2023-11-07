@@ -21,7 +21,7 @@ const Section = () => {
                     <p className='lg:text-3xl font-semibold py-5'>Satisfaction Guarranted</p>
                     <p>Your satisfaction is our top priority. With meticulous <br /> planning and personalized service, we ensure your travel <br /> experiences exceed expectations. Book with confidence, <br /> knowing that your journey will be nothing short of</p>
                 </div>
-            </div>
+            </div> 
         </div>
     );
 };
