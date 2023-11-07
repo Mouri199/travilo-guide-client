@@ -17,7 +17,7 @@ const Destination = () => {
                     <img className='w-[600px]' src={img} alt="" />
                     <img src={img7} alt="" />
                 </div>
-                <div className='lg:w-[290px] space-y-2'>
+                <div className='lg:w-[290px] space-y-2'> 
                     <img src={img2} alt="" />
                     <img src={img8} alt="" />
                     <img src={img4} alt="" />
