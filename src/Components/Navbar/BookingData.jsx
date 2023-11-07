@@ -28,4 +28,4 @@ const BookingData = ({ Book }) => {
     );
 };
 
-export default BookingData;
+export default BookingData; 
