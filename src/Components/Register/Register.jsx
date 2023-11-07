@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthProvider } from "../AuthContributor/AuthContributor";
 import Swal from "sweetalert2";
-import Dropzone from "react-dropzone";
+
 
 
 const Register = () => {
@@ -23,19 +23,18 @@ const Register = () => {
         const password = e.target.password.value;
         const name = e.target.name.value;
         const photo = e.target.name.value;
-        const passwords = e.target.passwords.value;
-        const firstname = e.target.firstname.value;
-        const lastname = e.target.lastname.value;
 
-        console.log(email, password, name, photo, passwords, lastname, firstname);
+
+
+        console.log(email, password, name, photo);
 
         setUserError(" ");
         setUserSuccess(" ");
 
-        if (!selectedFile) {
-            setUserError("Please upload a profile picture.");
-            return;
-        }
+        // if (!selectedFile) {
+        //     setUserError("Please upload a profile picture.");
+        //     return;
+        // }
 
 
         if (password.length < 6) {
@@ -47,7 +46,7 @@ const Register = () => {
         } else if (!/[!@#$%^&*]/.test(password))
             setUserError('you should a special character')
 
-        createRegister(email, password) 
+        createRegister(email, password)
             .then(result => {
 
                 updateUserDetails(result.user, name, photo, selectedFile)
@@ -149,21 +148,6 @@ const Register = () => {
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover lg:text-xl font-semibold dark:text-white text-black" >Forgot password?</a>
                     </label>
-                </div>
-                <div>
-                    <p className="lg:text-3xl text-xl font-semibold text-black dark:text-white mb-3">Upload Profile Picture</p>
-                    <Dropzone onDrop={acceptedFiles => setSelectedFile(acceptedFiles[0])}>
-                        {({ getRootProps, getInputProps }) => (
-                            <div className="border lg:p-3 p-2 lg:h-[100px] lg:w-[400px] w-[250px]" {...getRootProps()}>
-                                <input {...getInputProps()} />
-                                {selectedFile ? (
-                                    <p>Selected: {selectedFile.name}</p>
-                                ) : (
-                                    <p className=" text-center mt-6">Drag drop a file here, or click to select a file</p>
-                                )}
-                            </div>
-                        )}
-                    </Dropzone>
                 </div>
 
                 <div className="mt-6">

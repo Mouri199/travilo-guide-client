@@ -7,7 +7,7 @@ import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPasswor
 
 
 
- 
+
 export const AuthProvider = createContext(null);
 const googleProvider = new GoogleAuthProvider()
 const facebookProvider = new FacebookAuthProvider()
@@ -18,9 +18,13 @@ const AuthContibutor = ({ children }) => {
   const [user, setUser] = useState(null);
   const [load, setLoad] = useState(true);
 
-  const createRegister = (name, password) => {
+  const createRegister = async (email, password, name, photo) => {
+
     setLoad(true);
-    return createUserWithEmailAndPassword(auth, name, password)
+    const result = await createUserWithEmailAndPassword(auth, email, password);
+    await updateUser(name, photo)
+    await signOut();
+    return result;
   }
 
   const signInUser = (email, password) => {
@@ -29,19 +33,14 @@ const AuthContibutor = ({ children }) => {
 
   }
 
-  const updateUserDetails = (user, name, photo) => {
-    setLoad(true);
-    updateProfile(user, {
+  // update user
+  const updateUser = async (name, photo) => {
+    const result = await updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
     })
-      .then(() => {
-        setUser();
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
+    return result;
+  }
 
   const userLogOut = () => {
     setLoad(true);
@@ -76,7 +75,7 @@ const AuthContibutor = ({ children }) => {
       signOut()
     }
   }, [])
-  const providerInfo = { user, createRegister, signInUser, signInWithGoogle, userLogOut, load, updateUserDetails, signInFacebook }
+  const providerInfo = { user, createRegister, signInUser, signInWithGoogle, userLogOut, load, updateUser, signInFacebook }
   return (
     <AuthProvider.Provider value={providerInfo}>
       {children}

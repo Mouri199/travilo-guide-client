@@ -62,10 +62,11 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-56 z-[1] p-2 shadow bg-chocolate  text-center text-lg text-white rounded-box w-32">
                             <NavLink to="/">Home</NavLink>
-                            <NavLink to='/orders'>Orders</NavLink>
-                            <NavLink to='/beautytips'>Beauty Tips</NavLink>
-                            <NavLink to='/contactus'>Contact us</NavLink>
-                            <NavLink to='/cart'>Cart</NavLink>
+                            <NavLink to='/manageservice'>Manage Services</NavLink>
+                            <NavLink to='/addservices'>Add Services</NavLink>
+                            <NavLink to='/myschedules'>My Schedules</NavLink>
+                            <NavLink to='/mybooking'>My Booking</NavLink>
+                            <NavLink to='/contactus'>Services</NavLink>
                             <Link onClick={handleToggle}>Change Mode</Link>
 
                         </ul>
@@ -145,7 +146,7 @@ const Navbar = () => {
                                             {isTourDropdownOpen && (
                                                 <ul className="absolute top-[90px] bg-[#992833] text-center text-lg text-white rounded-lg w-[150px]">
                                                     <li>
-                                                        <Link to='/tour1'>My Services</Link>
+                                                        <Link to='/manageservice'>Manage Services</Link>
                                                     </li>
                                                     <li>
                                                         <Link to='/addservices'>Add Services</Link>

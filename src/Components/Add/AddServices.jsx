@@ -18,7 +18,7 @@ const AddServices = () => {
         console.log(name, image, price, description, location);
 
         const allService = {
-            name, image, description, price, location, username: user.displayName, userPhoto: user.photoURL
+            name, image, description, price, location, username: user.displayName,email:user.email, userPhoto: user.photoURL
         }
 
         axios.post("http://localhost:8000/allservices", allService)
