@@ -75,7 +75,7 @@ const Details = () => {
                                 <span className="title-font font-medium text-2xl dark:text-white text-gray-900">${price}</span>
                                 <div>
                                     <button className="flex ml-auto text-white bg-chocolate dark:bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" onClick={() => document.getElementById('my_modal_1').showModal()}>Book Now</button>
-                                </div>
+                                </div> 
                                 <dialog id="my_modal_1" className="modal">
                                     <div className="modal-box">
                                         <form onSubmit={handleAdd}>
