@@ -8,7 +8,7 @@ const ManageService = () => {
     const { user } = useContext(AuthProvider);
     const [services, setServices] = useState([]);
     // console.log(user.email);
-    axios.get(`http://localhost:8000/myservices?email=${user?.email}`)
+    axios.get(`https://travilo-guide-server.vercel.app/myservices?email=${user?.email}`)
         .then(res => {
             setServices(res.data)
         })

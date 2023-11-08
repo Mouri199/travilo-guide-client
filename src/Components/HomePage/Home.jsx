@@ -15,7 +15,7 @@ const Home = () => {
     const [service,setService] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:8000/allservices')
+        fetch('https://travilo-guide-server.vercel.app/allservices')
         .then(res => res.json())
         .then(data =>{
             setService(data)

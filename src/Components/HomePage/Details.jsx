@@ -35,7 +35,7 @@ const Details = () => {
             name:Name,hostname, date, details, servicename, image, mail, price:price, email:user.email,
         }
 
-        axios.post("http://localhost:8000/booking", allBooking)
+        axios.post("https://travilo-guide-server.vercel.app/booking", allBooking)
             .then(res => {
                 if (res.data.insertedId)
                     Swal.fire(" ", "Service added successfully!", "success"),

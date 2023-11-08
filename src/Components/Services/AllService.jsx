@@ -5,7 +5,7 @@ const AllService = ({ serv }) => {
     const { _id,image,price,name,detail,userPhoto,username} = serv || {}
     return (
         <div>
-            <div className='lg:flex items-center gap-10'>
+            <div className='lg:flex dark:text-white items-center gap-10'>
                 <div>
                     <img src={image} alt={image} className="max-w-sm  rounded-md" />
                 </div>
@@ -13,7 +13,7 @@ const AllService = ({ serv }) => {
                     <p className="text-2xl font-bold">{name}</p>
                     <p className="text-xl font-bold ">${price}</p>
                     <p className="text-xl"></p>
-                    <p className="text-gray-600">{detail?.slice(0, 300)}... <Link to={`/details/${_id}`} className="text-chocolate text-lg font-">More</Link>
+                    <p className="text-gray-600 dark:text-white">{detail?.slice(0, 300)}... <Link to={`/details/${_id}`} className="text-chocolate text-lg font-">More</Link>
                     </p>
 
                     <div className="flex items-center gap-2">

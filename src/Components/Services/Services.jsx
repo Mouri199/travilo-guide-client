@@ -8,7 +8,7 @@ const Services = () => {
     return (
         <div className='grid grid-cols-1 gap-20 lg:mx-40'>
             {
-                serviceData.map(info=> <AllService key={info._id} serv={info}></AllService>)
+                serviceData?.map(info=> <AllService key={info._id} serv={info}></AllService>)
             }
         </div>
     );

@@ -23,12 +23,12 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:8000/allservices')
+                loader: () => fetch('https://travilo-guide-server.vercel.app/allservices')
             },
             {
                 path: '/serviceDetails/:id',
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:8000/allservices/${params.id}`)
+                loader: ({ params }) => fetch(`https://travilo-guide-server.vercel.app/allservices/${params.id}`)
             },
             {
                 path: '/addservices',
@@ -41,17 +41,17 @@ const router = createBrowserRouter([
             {
                 path:'/update/:id',
                 element: <Update></Update>,
-                loader: ({params}) => fetch(`http://localhost:8000/Details/${params.id}`)
+                loader: ({params}) => fetch(`https://travilo-guide-server.vercel.app/Details/${params.id}`)
             },
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:8000/allservices')
+                loader: () => fetch('https://travilo-guide-server.vercel.app/allservices')
             },
             {
                 path: '/mybooking',
                 element:<MyBooking></MyBooking>,
-                loader: () => fetch('http://localhost:8000/mybooking')
+                loader: () => fetch('https://travilo-guide-server.vercel.app/mybooking')
             },
 
             {
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:8000/Details/${params.id}`)
+                loader: ({ params }) => fetch(`https://travilo-guide-server.vercel.app/Details/${params.id}`)
             },
             {
                 

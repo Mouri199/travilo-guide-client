@@ -1,13 +1,17 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/testi-2.jpg"
+import { useEffect } from "react";
 
 const Allservices = ({ data }) => {
 
     const { _id, name, image, description, price } = data || {}
+
+
+
     return (
         <div>
-            <div className="max-w-lg p-4 shadow-md dark:bg-gray-900 dark:text-gray-100">
+            <div className="max-w-lg p-4 shadow-md dark:bg-gray-900 dark:text-white">
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <img src={image} alt="" className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />

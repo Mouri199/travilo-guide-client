@@ -13,7 +13,7 @@ const Service = ({ info }) => {
     return (
         <div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 p-10 gap-5">
+            <div className="grid dark:text-white grid-cols-1 items-center md:grid-cols-2 p-10 gap-5">
                 <div>
                     <img src={image} alt={image} className="rounded-md" />
                 </div>
@@ -21,7 +21,7 @@ const Service = ({ info }) => {
                     <p className="text-2xl font-bold">{name}</p>
                     <p className="text-xl font-bold ">${price}</p>
                     <p className="text-xl"></p>
-                    <p className="text-gray-600">{detail.slice(0, 100)}... <Link to={`/details/${_id}`} className="text-chocolate text-lg font-">More</Link>
+                    <p className="text-gray-600 dark:text-white">{detail.slice(0, 100)}... <Link to={`/details/${_id}`} className="text-chocolate text-lg font-">More</Link>
                     </p>
 
                     <div className="flex items-center gap-2">

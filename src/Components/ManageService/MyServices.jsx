@@ -17,7 +17,7 @@ const MyServices = ({ service }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:8000/myservices/${id}`, id)
+                axios.delete(`https://travilo-guide-server.vercel.app/myservices/${id}`, id)
                     .then(res => {
                         if (res.data.deletedCount) {
                             Swal.fire({

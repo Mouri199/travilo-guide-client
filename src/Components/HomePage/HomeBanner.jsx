@@ -25,7 +25,7 @@ const HomeBanner = () => {
             <div>
                 <div>
 
-                    <div className='className="navigation-wrapper"'>
+                    <div className="navigation-wrapper">
                         <div ref={sliderRef} className="keen-slider lg:h-[700px]">
                             <div className="keen-slider__slide number-slide1" >
 

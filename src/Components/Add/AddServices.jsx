@@ -21,7 +21,7 @@ const AddServices = () => {
             name, image, description, price, location, username: user.displayName,email:user.email, userPhoto: user.photoURL
         }
 
-        axios.post("http://localhost:8000/allservices", allService)
+        axios.post("https://travilo-guide-server.vercel.app/allservices", allService)
             .then(res => {
                 if (res.data.insertedId)
                     Swal.fire(" ", "Service added successfully!", "success"),
