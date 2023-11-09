@@ -4,7 +4,7 @@ import img3 from '../../assets/images/slider-mainbg-003.jpg';
 import { useState } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-
+import { Typewriter } from 'react-simple-typewriter'
 import './Banner.css'
 
 const HomeBanner = () => {
@@ -19,6 +19,15 @@ const HomeBanner = () => {
             setLoaded(true)
         },
     })
+
+    // const handleType = (count: number) => {
+    //     // access word count number
+    //     console.log(count)}
+    //   }
+    
+    //   const handleDone = () => {
+    //     console.log(`Done after 5 loops!`)
+    //   }
 
     return (
         <div>
@@ -40,9 +49,21 @@ const HomeBanner = () => {
                                     <div className="absolute bottom-0 lg:bottom-56 lg:left-[600px] inset-x-0 z-10">
                                         <div className="flex flex-col h-full p-4 sm:p-6">
                                             <h3 className="text-lg sm:text-5xl font-semibold text-white group-hover:text-white/[.8]">
-                                                Lets Leave The Road,
-                                                And Take The Trails
-                                            </h3> 
+
+
+                                                <Typewriter
+                                                    words={["Lets Leave", "The Road!", "And Take","The Trails"]}
+                                                    loop={5}
+                                                    cursor
+                                                    cursorStyle='_'
+                                                    typeSpeed={70}
+                                                    deleteSpeed={50}
+                                                    delaySpeed={1000}
+                                                    // onLoopDone={handleDone}
+                                                    // onType={handleType}
+                                                />                                                {/* <Typewriter >    ,
+                                                      s</Typewriter> */}
+                                            </h3>
 
 
                                         </div>
@@ -147,7 +168,7 @@ const HomeBanner = () => {
                     )
                 }
             </div>
-            
+
 
         </div >
     );

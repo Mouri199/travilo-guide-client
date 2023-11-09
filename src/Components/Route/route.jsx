@@ -14,11 +14,13 @@ import Services from "../Services/Services";
 import MyBooking from "../Navbar/MyBooking";
 import ManageService from "../ManageService/ManageService";
 import Update from "../Update/Update";
+import Error from "../Error/Error";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainBody></MainBody>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
