@@ -13,7 +13,7 @@ const Service = ({ info }) => {
     return (
         <div>
 
-            <div className="grid dark:text-white grid-cols-1 items-center md:grid-cols-2 p-10 gap-5">
+            <div className="lg:flex dark:text-white  items-center lg:p-10 lg:gap-5">
                 <div>
                     <img src={image} alt={image} className="rounded-md" />
                 </div>

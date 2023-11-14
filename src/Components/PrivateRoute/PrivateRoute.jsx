@@ -2,8 +2,8 @@ import { useContext } from "react";
 
 import { Navigate } from "react-router-dom";
 import PropTypes from 'prop-types'
-import { AuthProvider } from "../AuthContributor/AuthContributor";
 import Swal from "sweetalert2";
+import { AuthProvider } from "../AuthContributor/AuthContributor";
 
 
 const PrivateRoute = ({ children }) => {

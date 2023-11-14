@@ -12,7 +12,7 @@
   "dependencies": {
     "apache-arrow": "^13.0.0",
     "axios": "^1.6.0",
-    "firebase": "^10.5.2",
+    "firebase": "^10.6.0",
     "keen-slider": "^6.8.6",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",

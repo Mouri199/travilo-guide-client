@@ -15,6 +15,7 @@ import MyBooking from "../Navbar/MyBooking";
 import ManageService from "../ManageService/ManageService";
 import Update from "../Update/Update";
 import Error from "../Error/Error";
+import Dashboard from "../Navbar/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -70,7 +71,8 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://travilo-guide-server.vercel.app/Details/${params.id}`)
             },
             {
-                
+               path:'/dashboard',
+               element: <Dashboard></Dashboard> 
             }
         ]
     },

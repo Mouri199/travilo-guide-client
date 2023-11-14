@@ -1,5 +1,3 @@
-
-
 import PropTypes from 'prop-types';
 import auth from "../Firebase/Firebase.config";
 import { createContext, useEffect, useState } from "react";
@@ -18,13 +16,18 @@ const AuthContibutor = ({ children }) => {
   const [user, setUser] = useState(null);
   const [load, setLoad] = useState(true);
 
-  const createRegister = async (email, password, name, photo) => {
+  // const createRegister = async (email, password, name, photo) => {
 
+  //   setLoad(true);
+  //   const result = await createUserWithEmailAndPassword(auth, email, password);
+  //   await updateUserDetails(name, photo)
+  //   // await signOut();
+  //   return result;
+  // }
+
+  const createRegister = (name, password) => {
     setLoad(true);
-    const result = await createUserWithEmailAndPassword(auth, email, password);
-    await updateUser(name, photo)
-    await signOut();
-    return result;
+    return createUserWithEmailAndPassword(auth, name, password)
   }
 
   const signInUser = (email, password) => {
@@ -33,19 +36,31 @@ const AuthContibutor = ({ children }) => {
 
   }
 
-  // update user
-  const updateUser = async (name, photo) => {
-    const result = await updateProfile(auth.currentUser, {
+  // // update user
+  // const updateUser = async (name, photo) => {
+  //   const result = await updateProfile(auth.currentUser, {
+  //     displayName: name,
+  //     photoURL: photo,
+  //   })
+  //   return result;
+  // }
+
+  const updateUserDetails = ( name, photo) => {
+    setLoad(true);
+    updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
     })
-    return result;
-  }
+      .then(() => {
+        setUser();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
-  const userLogOut = () => {
-    setLoad(true);
-    return signOut(auth)
-  }
+
+
 
   const signInWithGoogle = () => {
     setLoad(true);
@@ -65,6 +80,11 @@ const AuthContibutor = ({ children }) => {
       });
   }
 
+  const userLogOut = () => {
+    setLoad(true);
+    return signOut(auth)
+  }
+
   useEffect(() => {
     const signOut = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
@@ -75,7 +95,7 @@ const AuthContibutor = ({ children }) => {
       signOut()
     }
   }, [])
-  const providerInfo = { user, createRegister, signInUser, signInWithGoogle, userLogOut, load, updateUser, signInFacebook }
+  const providerInfo = { user, createRegister, signInUser, signInWithGoogle, userLogOut, load, updateUserDetails, signInFacebook }
   return (
     <AuthProvider.Provider value={providerInfo}>
       {children}

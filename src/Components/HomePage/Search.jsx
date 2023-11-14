@@ -7,7 +7,7 @@ const Search = ({ res }) => {
             <div className="max-w-xl flex justify-between items-center">
                 <div>
                     <p className="text-2xl font-bold">{name}</p>
-                    <p className="max-w-lg">{detail.slice(0, 150)}...<Link to={`/service/${_id}`} className="font-medium text-travego2 dark:text-blue-600">See More</Link></p>
+                    <p className="max-w-lg">{detail?.slice(0, 150)}...<Link to={`/service/${_id}`} className="font-medium text-travego2 dark:text-blue-600">See More</Link></p>
                 </div>
                 <div className="font-bold text-travego2  dark:text-blue-600 text-xl">
                     ${price}

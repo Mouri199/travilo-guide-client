@@ -9,11 +9,7 @@ const Details = () => {
     const {user} = useContext(AuthProvider)
     const navi = useNavigate()
 
-    const hideModal = () => {
-        const modal = document.getElementById("modal");
-        modal.classList.add('hidden')
-    }
-
+  
     const { image, price, detail, name, servicename,username } = details
 
     const handleAdd = e => {
@@ -109,7 +105,7 @@ const Details = () => {
 
                                             </div>
                                             <div className="form-control mt-6">
-                                                <button onClick={hideModal} className="btn bg-chocolate dark:bg-gray-800 hover:bg-slate-700 text-white">Book Now</button>
+                                                <button  className="btn bg-chocolate dark:bg-gray-800 hover:bg-slate-700 text-white">Book Now</button>
                                             </div>
                                         </form>
                                     </div>

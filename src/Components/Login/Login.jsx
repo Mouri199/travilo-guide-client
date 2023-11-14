@@ -71,7 +71,7 @@ const Login = () => {
                 });
             })
 
-            .then(error => {
+            .catch(error => {
                 console.error(error);
                 Swal.fire({
                     icon: "error",
@@ -94,7 +94,7 @@ const Login = () => {
                     text: "You have successfully signed in!",
                 });
             })
-            .then(error => {
+            .catch(error => {
                 console.error(error);
                 Swal.fire({
                     icon: "error",

@@ -64,7 +64,7 @@ const Navbar = () => {
                             <NavLink to="/">Home</NavLink>
                             <NavLink to='/manageservice'>Manage Services</NavLink>
                             <NavLink to='/addservices'>Add Services</NavLink>
-                            <NavLink to='/myschedules'>My Schedules</NavLink>
+                            {/* <NavLink to='/myschedules'>My Schedules</NavLink> */}
                             <NavLink to='/mybooking'>My Booking</NavLink>
                             <NavLink to='/contactus'>Services</NavLink>
                             <Link onClick={handleToggle}>Change Mode</Link>
@@ -78,9 +78,11 @@ const Navbar = () => {
                         <div className="flex justify-around items-center gap-2">
 
                             <div className="">
-                                {user ? <img className="h-[26px] rounded-full" src={user.photoURL} alt="" /> : " "}
+                                <div className="flex justify-center">
+                                    {user ? <img className="h-[24px]  rounded-full" src={user.photoURL} alt="" /> : " "}
 
-                                <p className="text-sm text-black dark:text-white font-semibold lg:font-bold">
+                                </div>
+                                <p className="text-sm text-black dark:text-white lg:font-bold">
                                     {
                                         user && <span>{user.displayName}</span>
                                     }
@@ -90,13 +92,13 @@ const Navbar = () => {
                         <div className="flex">
                             {
                                 user ? " " : <div className="flex gap-5 mx-3">
-                                    <Link to='/login'>  <button className="lg:p-2  p-2 rounded-lg text-sm font-bold  bg-[#992833] text-white hover:bg-slate-600">Login</button></Link>
-                                    <Link to='/register'> <button className="lg:p-2 p-2 rounded-lg text-sm font-bold  bg-[#992833] hover:bg-slate-600 text-white">Register</button></Link>
+                                    <Link to='/login'>  <button className="lg:p-2  rounded-lg text-sm lg:font-bold  bg-[#992833] text-white hover:bg-slate-600">Login</button></Link>
+                                    <Link to='/register'> <button className="lg:p-2 rounded-lg text-sm lg:font-bold  bg-[#992833] hover:bg-slate-600 text-white">Register</button></Link>
                                 </div>
                             }
 
                             {
-                                user ? <button onClick={handleLogOut} className="lg:p-2 p-2 rounded-lg text-sm font-bold  bg-[#992833] hover:bg-slate-600 text-white">SignOut</button> : " "
+                                user ? <button onClick={handleLogOut} className="lg:p-2 p-1 rounded-lg text-sm  bg-[#992833] lg:font-bold  hover:bg-slate-600 text-white">SignOut</button> : " "
                             }
                         </div>
                     </div>
@@ -151,9 +153,9 @@ const Navbar = () => {
                                                     <li>
                                                         <Link to='/addservices'>Add Services</Link>
                                                     </li>
-                                                    <li>
+                                                    {/* <li>
                                                         <Link to='/myschedules'>My Schedules</Link>
-                                                    </li>
+                                                    </li> */}
                                                     <li>
                                                         <Link to='/mybooking'>My Booking</Link>
                                                     </li>

@@ -11,7 +11,7 @@ const Register = () => {
 
     const [userError, setUserError] = useState();
     const [userSuccess, setUserSuccess] = useState();
-    const [selectedFile, setSelectedFile] = useState(null);
+    // const [selectedFile, setSelectedFile] = useState(null);
 
 
 
@@ -49,11 +49,11 @@ const Register = () => {
         createRegister(email, password)
             .then(result => {
 
-                updateUserDetails(result.user, name, photo, selectedFile)
+                updateUserDetails(result.user, name, photo)
                 console.log(result);
                 setUserSuccess("User Created successfully!")
                 e.target.reset()
-                registerNavi('/');
+                registerNavi('/login');
 
                 Swal.fire({
                     icon: "success",
@@ -72,7 +72,7 @@ const Register = () => {
                 });
 
             })
-        setSelectedFile(null);
+       
         e.target.reset()
     }
 
@@ -88,7 +88,7 @@ const Register = () => {
                 });
             })
 
-            .then(error => {
+            .catch(error => {
                 console.error(error);
                 Swal.fire({
                     icon: "error",
@@ -111,7 +111,7 @@ const Register = () => {
                     text: "You have successfully signed in!",
                 });
             })
-            .then(error => {
+            .catch(error => {
                 console.error(error);
                 Swal.fire({
                     icon: "error",
@@ -151,7 +151,7 @@ const Register = () => {
                 </div>
 
                 <div className="mt-6">
-                    <button className="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-[#992833] text-white shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">Sign In</button>
+                    <button className="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-[#992833] text-white shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">Register</button>
                 </div>
                 <div className="lg:text-xl text-sm mt-3 text-center font-semibold text-black dark:text-white" >
                     <p>
