@@ -15,7 +15,7 @@ const BookingData = ({ Book }) => {
                     <p className="text-xl">{servicename}</p>
                     <p className="text-xl font-bold ">${price}</p>
                     <p className="text-xl"></p>
-                    <p className="text-gray-600 w-[600px]">{details?.slice(0, 300)}... <Link>More</Link>
+                    <p className="text-gray-600 w-[600px]">{details?.slice(0, 300)}... <Link to={`/details/${_id}`} className="text-chocolate text-lg font-" >More</Link>
                     </p>
 
                   

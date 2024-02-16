@@ -8,8 +8,8 @@ const About = () => {
                     <img src={img} alt="" />
                 </div>
                 <div className='lg:ml-20 lg:mx-0 md:mx-10'>
-                    <p className='lg:text-5xl dark:text-white  font-semibold'>About Us</p>
-                    <p className='lg:text-3xl dark:text-white  font-bold my-5'>Welcome to <span className='text-[#992833]'>Travilo-Guide</span></p>
+                    <p className='lg:text-5xl dark:text-white text-c font-semibold'>About Us</p>
+                    <p className='lg:text-3xl dark:text-white text-center  font-bold my-5'>Welcome to <span className='text-[#992833]'>Travilo-Guide</span></p>
                     <div className='flex justify-between text-lg dark:text-white gap-10'>
                         <div>
                             <div className='flex items-center gap-3'>

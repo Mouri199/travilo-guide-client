@@ -4,6 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { AuthProvider } from '../AuthContributor/AuthContributor';
+import { useContext } from 'react';
 
 const AddServices = () => {
     const { user } = useContext(AuthProvider)
@@ -16,10 +17,12 @@ const AddServices = () => {
         const description = form.description.value;
         const price = form.price.value;
         const location = form.location.value;
-        console.log(name, image, price, description, location);
+        const userName = form.userName.value;
+        const email=form.email.value;
+        console.log(name, image,userName,email, price, description, location);
 
         const allService = {
-            name, image, description, price, location, username: user.displayName,email:user.email, userPhoto: user.photoURL
+            name, image, description, price, location, userName: user.displayName,email:user.email, userPhoto: user.photoURL
         }
 
         axios.post("https://travilo-guide-server.vercel.app/allservices", allService)
@@ -52,6 +55,10 @@ const AddServices = () => {
                     <div className="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10 dark:bg-gray-800 dark:border-gray-700">
                         <form onSubmit={handleAdd}>
                             <div className="mb-4 justify-between sm:mb-8">
+                                <label className="block mb-2 text-sm font-medium dark:text-white">Your Name</label>
+                                <input type="text" id="hs-feedback-post-comment-name-1" className="py-3 border px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"  name='userName' placeholder="Your name" />
+                                <label className="block mb-2 text-sm font-medium dark:text-white">Your Email</label>
+                                <input type="text" id="hs-feedback-post-comment-name-1" className="py-3 border px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" name='email' placeholder="Your Email" />
                                 <label className="block mb-2 text-sm font-medium dark:text-white">Service Name</label>
                                 <input type="text" id="hs-feedback-post-comment-name-1" className="py-3 border px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" name='name' placeholder="Service name" />
 

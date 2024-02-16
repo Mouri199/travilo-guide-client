@@ -33,27 +33,7 @@ const Service = ({ info }) => {
                 </div>
 
             </div>
-            {/* <div className="rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
-                <img src={image} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
-                <div className="flex flex-col justify-between p-6 space-y-3">
-                    <div className="space-y-2">
-                        <div className="flex justify-between items-center">
-
-                            <h2 className="text-3xl font-semibold tracki">{name} Local Tour</h2>
-                            <p className="text-2xl font-semibold">${price}</p>
-
-                        </div>
-                      
-                        <p className="dark:text-gray-100">{detail.slice(0,100)}...</p>
-                        <Link to={`/serviceDetails/${_id}`} className="text-chocolate text-xl font-">More</Link>
-                       
-                    </div>
-                    <div className="flex items-center gap-5">
-                        <img className="w-10 rounded-full" src={userPhoto} alt="" />
-                        <p>{username}</p>
-                    </div>
-                </div>
-            </div> */}
+        
 
         </div>
     );

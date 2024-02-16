@@ -13,6 +13,7 @@ import axios from "axios";
 import Search from "./Search";
 
 
+
 const Home = () => {
     const [service, setService] = useState([])
 
@@ -59,35 +60,38 @@ const Home = () => {
 
     // console.log(service);
     return (
-        <div>
-            <HomeBanner></HomeBanner>
-            <div className="flex flex-col justify-center md:flex-row">
-                <input onChange={search} name="search" type="text" placeholder="Search Services" className="p-2 w-1/2 bg-black text-white bg-opacity-70" />
-            </div>
-            <div className={`flex flex-col justify-center items-center
+        <>
+           
+            <div>
+
+                <HomeBanner></HomeBanner>
+                <div className="flex flex-col justify-center md:flex-row">
+                    <input onChange={search} name="search" type="text" placeholder="Search Services" className="p-2 w-1/2 bg-black text-white bg-opacity-70" />
+                </div>
+                <div className={`flex flex-col justify-center items-center
             ${searchLength > 1 ? "" : "hidden"}
             `}>
-                {
-                    finalResult.map(element => <Search key={element._id} res={element}></Search>)
-                }
-            </div>
-            <About></About>
-            <p className="text-center text-6xl font-semibold my-10 dark:text-white">Our Services</p>
-            <div className="grid lg:grid-cols-2 grid-cols-1 lg:m-0 m-5 lg:gap-5">
-                {
-                    fourData?.map(item => <Service key={item._id} info={item}></Service>)
-                }
-                <Link to='/services' className="flex justify-center lg:col-span-2" ><button className="btn text-sm font-bold bg-[#992833] dark:bg-gray-800 hover:bg-slate-600 text-white">Show more</button></Link>
-            </div>
+                    {
+                        finalResult.map(element => <Search key={element._id} res={element}></Search>)
+                    }
+                </div>
+                <About></About>
+                <p className="text-center text-6xl font-semibold my-10 dark:text-white">Our Services</p>
+                <div className="grid lg:grid-cols-2 grid-cols-1 lg:m-0 m-5 lg:gap-5">
+                    {
+                        fourData?.map(item => <Service key={item._id} info={item}></Service>)
+                    }
+                    <Link to='/services' className="flex justify-center lg:col-span-2" ><button className="btn text-sm font-bold bg-[#992833] dark:bg-gray-800 hover:bg-slate-600 text-white">Show more</button></Link>
+                </div>
 
 
-            <Section></Section>
-            <Destination></Destination>
-            <div className="lg:block hidden"><SweetMemory></SweetMemory></div>
-            <TravelersSay></TravelersSay>
-            <LogoCart></LogoCart>
-            <Gallery></Gallery>
-        </div>
+                <Section></Section>
+                <Destination></Destination>
+                <div className="lg:block hidden"><SweetMemory></SweetMemory></div>
+                <TravelersSay></TravelersSay>
+                <LogoCart></LogoCart>
+                <Gallery></Gallery>
+            </div></>
     );
 };
 

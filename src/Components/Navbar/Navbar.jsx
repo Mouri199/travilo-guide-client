@@ -66,7 +66,7 @@ const Navbar = () => {
                             <NavLink to='/addservices'>Add Services</NavLink>
                             {/* <NavLink to='/myschedules'>My Schedules</NavLink> */}
                             <NavLink to='/mybooking'>My Booking</NavLink>
-                            <NavLink to='/contactus'>Services</NavLink>
+                            <NavLink to='/services'>Services</NavLink>
                             <Link onClick={handleToggle}>Change Mode</Link>
 
                         </ul>
@@ -168,7 +168,7 @@ const Navbar = () => {
 
 
                             <li>
-                                <Link to='/contactus'>Services</Link>
+                                <Link to='/services'>Services</Link>
                             </li>
 
                         </ul>
