@@ -9,44 +9,15 @@ import Service from "./Service";
 import SweetMemory from "./SweetMemory";
 import TravelersSay from "./TravelersSay";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import Search from "./Search";
+import Serching from "./Serching";
 
 
 
 const Home = () => {
     const [service, setService] = useState([])
 
-
-    const [searchItem, setSearchItem] = useState([]);
-    const [finalResult, setFinalResult] = useState([]);
-    const [searchLength, setSearchLength] = useState(0);
-    const search = (e) => {
-        const searchValue = e.target.value;
-        // console.log(searchValue.length);
-        // if(searchValue.length)
-        setSearchLength(searchValue.length);
-        // console.log(searchLength);
-
-
-        // console.log(searchValue);
-        axios.get("https://travilo-guide-server.vercel.app/allservices")
-            .then(response => {
-                // setServices(response.data);
-                // console.log(response.data);
-                setSearchItem(response.data)
-            })
-        const result = searchItem.filter(item => {
-            // console.log(searchValue.toLowerCase());
-            const searchResult = (item.name.toLowerCase().includes(searchValue));
-            return searchResult;
-
-        })
-        // console.log(result);
-        setFinalResult(result);
-
-
-    }
+    const [search, setSearch] = useState("")
+    console.log(search);
 
     useEffect(() => {
         fetch('https://travilo-guide-server.vercel.app/allservices')
@@ -58,23 +29,19 @@ const Home = () => {
 
     const fourData = service.slice(0, 4)
 
-    // console.log(service);
+
+
     return (
         <>
-           
+
             <div>
 
                 <HomeBanner></HomeBanner>
+
                 <div className="flex flex-col justify-center md:flex-row">
-                    <input onChange={search} name="search" type="text" placeholder="Search Services" className="p-2 w-1/2 bg-black text-white bg-opacity-70" />
+                    <input onChange={(e) => { setSearch(e.target.value) }} name="search" type="text" placeholder="Search Services" className="p-2 w-1/2 bg-black text-white bg-opacity-70" />
                 </div>
-                <div className={`flex flex-col justify-center items-center
-            ${searchLength > 1 ? "" : "hidden"}
-            `}>
-                    {
-                        finalResult.map(element => <Search key={element._id} res={element}></Search>)
-                    }
-                </div>
+                <Serching search={search}></Serching>
                 <About></About>
                 <p className="text-center text-6xl font-semibold my-10 dark:text-white">Our Services</p>
                 <div className="grid lg:grid-cols-2 grid-cols-1 lg:m-0 m-5 lg:gap-5">
